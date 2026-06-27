@@ -28,7 +28,7 @@ EOF
 
 elif [ "$1" = "push" ]; then
     # ponytail: local lint + auto-bump tag + push
-    ruff check src/ --fix || echo "[!] Ruff encontrou avisos, mas seguindo o fluxo..."
+    ruff check src/ --fix || { echo "[X] Falha no Ruff! Corrija os erros antes de fazer o push."; exit 1; }
     
     git add .
     git commit -m "${2:-"Atualização automática dos plugins"}"
