@@ -28,34 +28,34 @@ Você pode encontrar as instruções de instalação [aqui](https://github.com/J
 
 Assim que o Jackett estiver instalado. Você pode abrir a UI da Web para configurar os sites de torrent. O URL do Jackett geralmente é http://127.0.0.1:9117. A próxima etapa é configurar seus sites de torrent favoritos. Clique no botão "Adicionar indexador" e siga as instruções.
 
-![](https://raw.githubusercontent.com/qbittorrent/search-plugins/master/wiki/qbittorrent_torznab_search_1.png)
+![](images/qbittorrent_torznab_search_1.png)
 
 Quando terminar, use a “Pesquisa manual” para verificar se funciona corretamente.
 
-![](https://raw.githubusercontent.com/qbittorrent/search-plugins/master/wiki/qbittorrent_torznab_search_2.png)
+![](images/qbittorrent_torznab_search_2.png)
 
 ## mecanismo de pesquisa qBittorrent
 
 Por padrão, o mecanismo de pesquisa está desativado. Você pode habilitá-lo em "Visualizar => Mecanismo de pesquisa".
 
-![](https://raw.githubusercontent.com/qbittorrent/search-plugins/master/wiki/qbittorrent_torznab_search_3.png)
+![](images/qbittorrent_torznab_search_3.png)
 
 Agora você verá uma nova aba onde poderá pesquisar e configurar os “Indexadores” (sites de torrent).
 
-![](https://raw.githubusercontent.com/qbittorrent/search-plugins/master/wiki/qbittorrent_torznab_search_4.png)
+![](images/qbittorrent_torznab_search_4.png)
 
 Você deve adicionar os indexadores um por um. O nome pode ser qualquer coisa. O URL do Toznab e a chave de API são copiados da UI da Web do Jackett.
 
-![](https://raw.githubusercontent.com/qbittorrent/search-plugins/master/wiki/qbittorrent_torznab_search_5.png)
+![](images/qbittorrent_torznab_search_5.png)
 
-![](https://raw.githubusercontent.com/qbittorrent/search-plugins/master/wiki/qbittorrent_torznab_search_6.png)
+![](images/qbittorrent_torznab_search_6.png)
 
 Os indexadores podem ser desabilitados e editados com o "menu do botão direito".
 
-![](https://raw.githubusercontent.com/qbittorrent/search-plugins/master/wiki/qbittorrent_torznab_search_7.png)
+![](images/qbittorrent_torznab_search_7.png)
 
 Você pode realizar pesquisas em todos os indexadores habilitados normalmente.
 
-![](https://raw.githubusercontent.com/qbittorrent/search-plugins/master/wiki/qbittorrent_torznab_search_8.png)
+![](images/qbittorrent_torznab_search_8.png)
 
 Se algum indexador não estiver funcionando conforme o esperado (ou você não obtiver nenhum resultado), verifique os logs qBittorrent e Jackett para obter mais detalhes.
