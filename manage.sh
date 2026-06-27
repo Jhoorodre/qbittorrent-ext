@@ -28,8 +28,8 @@ EOF
     raw="https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/$folder/$slug.py"
     sed -i "/^## 🛠️ Ferramenta/i * **$2**:\n\`\`\`text\n$raw\n\`\`\`\n" README.md
     
-    # Adiciona no roadmap de desenvolvimento
-    sed -i "/^### 🚧 Em Desenvolvimento/a - [ ] **$folder**: Plugin em desenvolvimento." README.md
+    # Adiciona no roadmap de desenvolvimento salvando o nome bonito e a pasta
+    sed -i "/^### 🚧 Em Desenvolvimento/a - [ ] **$2** (\`$folder\`): Plugin em desenvolvimento." README.md
     
     echo "[✓] Extensão '$2' criada em src/$folder/ e adicionada ao Roadmap!"
 
@@ -39,16 +39,18 @@ elif [ "$1" = "push" ]; then
     
     # Move qualquer plugin 'em desenvolvimento' para 'concluídos' e adiciona o link
     sed -n '/^### 🚧 Em Desenvolvimento/,/^###/p' README.md | grep '^- \[ \]' | while read -r line; do
-        plugin=$(echo "$line" | sed 's/^- \[ \] \*\*\(.*\)\*\*:.*$/\1/')
+        # Extrai o nome bonito e a pasta a partir do novo formato do Roadmap
+        pretty=$(echo "$line" | sed 's/^- \[ \] \*\*\(.*\)\*\* (`.*`):.*$/\1/')
+        folder=$(echo "$line" | sed 's/^- \[ \] \*\*.*\*\* (`\(.*\)`):.*$/\1/')
         
-        # Remove do desenvolvimento e adiciona nos concluídos
-        sed -i "/- \[ \] \*\*$plugin\*\*/d" README.md
-        sed -i "/^### ✅ Concluídos/a - [x] **$plugin**: Plugin de busca concluído." README.md
+        # Remove do desenvolvimento e adiciona nos concluídos (mantendo o formato legível)
+        sed -i "/- \[ \] \*\*$pretty\*\* (\`$folder\`)/d" README.md
+        sed -i "/^### ✅ Concluídos/a - [x] **$pretty**: Plugin de busca concluído." README.md
         
-        # Gera e injeta o bloco de texto para download nas Extensões Disponíveis
-        slug=${plugin%-qb}
-        raw="https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/$plugin/$slug.py"
-        sed -i "/^## 🛠️ Ferramenta/i * **$plugin**:\n\`\`\`text\n$raw\n\`\`\`\n" README.md
+        # Gera e injeta o bloco de texto para download nas Extensões Disponíveis com o nome original
+        slug=${folder%-qb}
+        raw="https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/$folder/$slug.py"
+        sed -i "/^## 🛠️ Ferramenta/i * **$pretty**:\n\`\`\`text\n$raw\n\`\`\`\n" README.md
     done
     
     git add .
