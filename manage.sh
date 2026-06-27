@@ -26,18 +26,25 @@ EOF
     # ponytail: automatic README injection with copyable code block
     raw="https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/$slug/$slug.py"
     sed -i "/^## 🛠️ Ferramenta/i * **$2**:\n\`\`\`text\n$raw\n\`\`\`\n" README.md
-    sed -i "/^### 🚧 Em Desenvolvimento/a - [ ] **$slug**: Plugin em desenvolvimento." README.md
-    echo "[✓] Extensão '$2' criada em src/$slug/ e adicionada ao README e ao Roadmap!"
+    echo "[✓] Extensão '$2' criada em src/$slug/ e link adicionado ao README!"
 
 elif [ "$1" = "push" ]; then
-    # ponytail: local lint + push normal
+    # ponytail: local lint + auto-bump tag + push
     ruff check src/ --fix || { echo "[X] Falha no Ruff! Corrija os erros antes de fazer o push."; exit 1; }
     
     git add .
-    git commit -m "${2:-"Atualização de desenvolvimento"}"
-    git push origin main
+    git commit -m "${2:-"Atualização automática dos plugins"}"
     
-    echo "[✓] Commit feito e enviado para a branch main!"
+    # auto increment patch version (ex: v1.0.3 -> v1.0.4)
+    tag=$(git describe --tags --abbrev=0 2>/dev/null || echo "v1.0.0")
+    if git rev-parse "$tag" >/dev/null 2>&1; then
+        tag=$(echo "$tag" | awk -F. -v OFS=. '{$NF += 1 ; print}')
+    fi
+    
+    git tag "$tag"
+    git push origin main
+    git push origin "$tag"
+    echo "[✓] Commit feito, tag $tag gerada e enviada! O GitHub Actions vai gerar o .zip agora."
 
 else
     echo "Uso: ./manage.sh new \"Nome da Extensao\"  |  ./manage.sh push \"Mensagem do Commit\""
