@@ -10,33 +10,33 @@ Por exemplo, aqui está como os plug-ins oficiais são verificados: [ci.yaml](ht
 
 
 #ÍNDICE
-## [Especificação de plug-ins](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin#plugins-specification-1)
+## [Especificação de plug-ins](How-to-write-a-search-plugin.md#plugins-specification-1)
 
-### 1.1 [Formato dos resultados da pesquisa](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin/#search-results-format)
+### 1.1 [Formato dos resultados da pesquisa](How-to-write-a-search-plugin.md/#search-results-format)
 
-### 1.2 [Estrutura de arquivo de classe Python](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin/#python-class-file-structure)
+### 1.2 [Estrutura de arquivo de classe Python](How-to-write-a-search-plugin.md/#python-class-file-structure)
 
-### 1.3 [Análise de resultados de páginas da Web](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin/#parsing-results-from-web-pages)
+### 1.3 [Análise de resultados de páginas da Web](How-to-write-a-search-plugin.md/#parsing-results-from-web-pages)
 
-## [Compreendendo o código](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin#understanding-the-code-1)
+## [Compreendendo o código](How-to-write-a-search-plugin.md#understanding-the-code-1)
 
-### 2.1 [Função auxiliar do PrettyPrinter](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin#prettyprinter-helper-function)
+### 2.1 [Função auxiliar do PrettyPrinter](How-to-write-a-search-plugin.md#prettyprinter-helper-function)
 
-### 2.2 [Função auxiliar Retrieve_URL](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin#retrieve_url-helper-function)
+### 2.2 [Função auxiliar Retrieve_URL](How-to-write-a-search-plugin.md#retrieve_url-helper-function)
 
-### 2.3 [Função auxiliar Download_File](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin#download_file-helper-function)
+### 2.3 [Função auxiliar Download_File](How-to-write-a-search-plugin.md#download_file-helper-function)
 
-## [Testando e finalizando seu código](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin#testing--finalizing-your-code-1)
+## [Testando e finalizando seu código](How-to-write-a-search-plugin.md#testing--finalizing-your-code-1)
 
-### 3.1 [Exemplos de código](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin/#code-examples)
+### 3.1 [Exemplos de código](How-to-write-a-search-plugin.md/#code-examples)
 
-### 3.2 [Testando seu plug-in](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin#testing-your-plugin)
+### 3.2 [Testando seu plug-in](How-to-write-a-search-plugin.md#testing-your-plugin)
 
-### 3.3 [Instale seu plug-in](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin#install-your-plugin)
+### 3.3 [Instale seu plug-in](How-to-write-a-search-plugin.md#install-your-plugin)
 
-### 3.4 [Publique seu plug-in](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin#publish-your-plugin)
+### 3.4 [Publique seu plug-in](How-to-write-a-search-plugin.md#publish-your-plugin)
 
-### 3.5 [Notas](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin#notes)
+### 3.5 [Notas](How-to-write-a-search-plugin.md#notes)
 
 
 # Especificação de plug-ins

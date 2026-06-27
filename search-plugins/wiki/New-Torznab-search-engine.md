@@ -2,7 +2,7 @@ Este guia irá ajudá-lo a configurar o novo mecanismo de busca qBittorrent.
 
 ## Aviso de descontinuação
 
-Até a versão 4.5.0, o qBittorrent tinha um mecanismo de busca nativo baseado em Python. A equipe qBittorrent ficou encarregada de verificar a instalação do Python e a manutenção dos [plugins de busca](https://github.com/qbittorrent/search-plugins) para os sites de torrent. Havia também [plugins não oficiais](https://github.com/qbittorrent/search-plugins/wiki/Unofficial-search-plugins) mantidos pela comunidade.
+Até a versão 4.5.0, o qBittorrent tinha um mecanismo de busca nativo baseado em Python. A equipe qBittorrent ficou encarregada de verificar a instalação do Python e a manutenção dos [plugins de busca](https://github.com/qbittorrent/search-plugins) para os sites de torrent. Havia também [plugins não oficiais](Unofficial-search-plugins.media.md) mantidos pela comunidade.
 
 Com o passar do tempo, a manutenção deste sistema tornou-se um fardo devido ao grande número de sites de torrent e à falta de desenvolvedores com conhecimento de Python.
 Desde a versão 4.5.0, o mecanismo de busca nativo foi substituído por um novo mecanismo de busca que faz chamadas para [APIs compatíveis com Torznab](https://torznab.github.io/spec-1.3-draft/torznab/Specification-v1.3.html). Isto implica que o usuário final deve instalar software adicional para realizar pesquisas no qBittorrent.

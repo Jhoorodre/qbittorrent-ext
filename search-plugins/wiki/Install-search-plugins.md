@@ -2,7 +2,7 @@
 
 0. Observe que plug-ins/scripts python não são, por natureza, considerados seguros. Portanto, qualquer uso de plug-ins não oficiais é por sua conta e risco. É uma boa prática auditar/dar uma olhada no plugin/script antes de instalar.
 
-1. Acesse https://github.com/qbittorrent/search-plugins/wiki/Unofficial-search-plugins
+1. Acesse Unofficial-search-plugins.media.md
 1. Na coluna `Download`, clique no link `Download` apropriado
 1. Salve o arquivo `.py` em um local temporário em seu armazenamento local
 
@@ -21,7 +21,7 @@ Usando a janela principal, clique em `Visualizar` -> `Mecanismo de pesquisa` par
 > O plugin do mecanismo de pesquisa <PLUGIN.NAME> foi instalado com sucesso.
 1. Se não tiver sucesso, a seguinte mensagem será exibida
 > O plug-in do mecanismo de pesquisa <PLUGIN.NAME> não pôde ser instalado.
-1. Usando [esta página](https://github.com/qbittorrent/search-plugins/wiki/Unofficial-search-plugins) na coluna `Comment`, verifique se o seu sistema atende aos requisitos mínimos para cada plugin de pesquisa. Talvez o seu sistema atual não tenha os requisitos.
+1. Usando [esta página](Unofficial-search-plugins.media.md) na coluna `Comment`, verifique se o seu sistema atende aos requisitos mínimos para cada plugin de pesquisa. Talvez o seu sistema atual não tenha os requisitos.
 1. Clique no botão `Fechar`
 1. Você pode excluir o arquivo `.py` do seu local temporário no armazenamento local, pois ele não é mais necessário.
 1. Opcionalmente, você pode usar a janela `Pesquisar plug-ins` para ativar ou desativar plug-ins de pesquisa ou verificar se há atualizações.

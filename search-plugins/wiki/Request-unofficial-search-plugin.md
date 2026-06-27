@@ -1,8 +1,8 @@
 No qBittorrent existem dois tipos de plugins de pesquisa:
 * Oficial: mantido por desenvolvedores qBittorrent e pode ser atualizado através do cliente qBittorrent. Você pode encontrá-los [aqui](https://github.com/qbittorrent/search-plugins/tree/master/nova3/engines).
-* Não oficial: mantido por terceiros. Você pode encontrá-los [aqui](https://github.com/qbittorrent/search-plugins/wiki/Unofficial-search-plugins).
+* Não oficial: mantido por terceiros. Você pode encontrá-los [aqui](Unofficial-search-plugins.media.md).
 
-Se você conhece um site de torrent que não está na lista oficial/não oficial, você mesmo pode codificá-lo com as instruções [aqui](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin) e atualize a tabela a seguir.
+Se você conhece um site de torrent que não está na lista oficial/não oficial, você mesmo pode codificá-lo com as instruções [aqui](How-to-write-a-search-plugin.md) e atualize a tabela a seguir.
 
 **Desenvolvedores:** Você pode trabalhar em qualquer plugin. Isso deixaria a pessoa que fez o pedido muito feliz. Sites em andamento já estão sendo trabalhados por alguém. É aconselhável contatá-los e oferecer ajuda caso queira trabalhar no mesmo site.
 
