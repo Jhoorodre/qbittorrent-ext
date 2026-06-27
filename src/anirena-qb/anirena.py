@@ -1,4 +1,4 @@
-# VERSION: 1.01
+# VERSION: 1.02
 import re
 import urllib.parse
 import urllib.request
@@ -45,6 +45,10 @@ class anirena:
                 
                 le_match = re.search(r'<td[^>]*class=["\']?col-le[^>]*>.*?<span[^>]*class=["\']?tl-le[^>]*>(\d+)</span>', row, re.I | re.S)
                 item['leech'] = le_match.group(1) if le_match else '-1'
+                
+                date_match = re.search(r'data-created-ts=["\']?(\d+)["\']?', row, re.I)
+                if date_match:
+                    item['pub_date'] = date_match.group(1)
                 
                 item['engine_url'] = self.url
                 item['desc_link'] = self.url
