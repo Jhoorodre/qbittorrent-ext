@@ -1,0 +1,43 @@
+name: Release Plugins
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        
+    - name: Install Ruff
+      run: pip install ruff
+      
+    - name: Run Ruff Check
+      run: ruff check src/
+      
+    - name: Package Python Plugins
+      run: |
+        mkdir -p release_files
+        # Copia todos os arquivos .py dentro de src/ para a pasta temporária
+        find src -name "*.py" -exec cp {} release_files/ \;
+        
+        # Cria o pacote .zip
+        cd release_files
+        zip -r ../qbittorrent-plugins.zip .
+        
+    - name: Publish GitHub Release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: qbittorrent-plugins.zip
+        generate_release_notes: true
