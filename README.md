@@ -23,6 +23,11 @@ https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/amigosshare
 https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/darkmahou-qb/darkmahou.py
 ```
 
+* **anirena**:
+```text
+https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/anirena/anirena.py
+```
+
 ## 🛠️ Ferramenta de Automação (`manage.sh`)
 
 Este repositório conta com um script bash próprio de automação para facilitar a vida do desenvolvedor, desde a criação de novos plugins até a checagem e envio de código. Comandos disponíveis:
@@ -43,6 +48,7 @@ Este repositório conta com um script bash próprio de automação para facilita
 Abaixo estão as extensões listadas por status de desenvolvimento:
 
 ### ✅ Concluídos
+- [x] **anirena**: Plugin de busca concluído.
 - [x] **amigosshareclub-qb**: Plugin de busca concluído.
 - [x] **darkmahou-qb**: Plugin de busca concluído.
 
