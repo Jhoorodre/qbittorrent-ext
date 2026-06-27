@@ -4,11 +4,12 @@
 
 if [ "$1" = "new" ]; then
     # ponytail: one-liner slug generation
-    slug=$(echo "$2" | tr '[:upper:]' '[:lower:]' | tr -c 'a-z0-9' '-' | sed 's/-$//')
-    mkdir -p "src/$slug"
+    slug=$(echo "$2" | tr '[:upper:]' '[:lower:]' | tr -c 'a-z0-9' '-' | sed 's/-$//' | sed 's/-qb$//')
+    folder="${slug}-qb"
+    mkdir -p "src/$folder"
     
     # ponytail: minimal template injection
-    cat <<EOF > "src/$slug/$slug.py"
+    cat <<EOF > "src/$folder/$slug.py"
 # VERSION: 1.00
 import re
 import urllib.parse
@@ -23,10 +24,14 @@ class $slug:
         pass # ponytail: implement your search here
 EOF
     
-    # ponytail: add to Roadmap under 'Em Desenvolvimento'
-    sed -i "/^### 🚧 Em Desenvolvimento/a - [ ] **$slug**: Plugin em desenvolvimento." README.md
+    # ponytail: automatic README injection with copyable code block
+    raw="https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/$folder/$slug.py"
+    sed -i "/^## 🛠️ Ferramenta/i * **$2**:\n\`\`\`text\n$raw\n\`\`\`\n" README.md
     
-    echo "[✓] Extensão '$2' criada em src/$slug/ e adicionada ao Roadmap!"
+    # Adiciona no roadmap de desenvolvimento
+    sed -i "/^### 🚧 Em Desenvolvimento/a - [ ] **$folder**: Plugin em desenvolvimento." README.md
+    
+    echo "[✓] Extensão '$2' criada em src/$folder/ e adicionada ao Roadmap!"
 
 elif [ "$1" = "push" ]; then
     # ponytail: local lint + auto-bump tag + push
@@ -41,7 +46,8 @@ elif [ "$1" = "push" ]; then
         sed -i "/^### ✅ Concluídos/a - [x] **$plugin**: Plugin de busca concluído." README.md
         
         # Gera e injeta o bloco de texto para download nas Extensões Disponíveis
-        raw="https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/$plugin/$plugin.py"
+        slug=${plugin%-qb}
+        raw="https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/$plugin/$slug.py"
         sed -i "/^## 🛠️ Ferramenta/i * **$plugin**:\n\`\`\`text\n$raw\n\`\`\`\n" README.md
     done
     

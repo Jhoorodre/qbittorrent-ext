@@ -23,7 +23,7 @@ https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/amigosshare
 https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/darkmahou-qb/darkmahou.py
 ```
 
-* **anirena**:
+* **anirena-qb**:
 ```text
 https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/anirena/anirena.py
 ```
@@ -48,7 +48,7 @@ Este repositório conta com um script bash próprio de automação para facilita
 Abaixo estão as extensões listadas por status de desenvolvimento:
 
 ### ✅ Concluídos
-- [x] **anirena**: Plugin de busca concluído.
+- [x] **anirena-qb**: Plugin de busca concluído.
 - [x] **amigosshareclub-qb**: Plugin de busca concluído.
 - [x] **darkmahou-qb**: Plugin de busca concluído.
 
