@@ -23,6 +23,22 @@ https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/amigosshare
 https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/darkmahou-qb/darkmahou.py
 ```
 
+## 🛠️ Ferramenta de Automação (`manage.sh`)
+
+Este repositório conta com um script bash próprio de automação para facilitar a vida do desenvolvedor, desde a criação de novos plugins até a checagem e envio de código. Comandos disponíveis:
+
+* **Criar uma nova extensão do zero:**
+  ```bash
+  ./manage.sh new "Nome da Extensão"
+  ```
+  Ele cria a pasta em `src/`, gera o código Python boilerplate mínimo do qBittorrent, e injeta o bloco de texto com o botão de copiar aqui mesmo neste README, tudo de uma vez.
+
+* **Validar código e fazer o Release (Push):**
+  ```bash
+  ./manage.sh push "Mensagem do seu commit"
+  ```
+  Ele obriga a checagem rigorosa de qualidade usando o linter **Ruff**. Se os testes passarem, o script empurra os códigos, incrementa uma nova **Tag** automática, e aciona o robô do GitHub para compilar o arquivo `.zip` na aba de Releases.
+
 ## 🚀 Roadmap de Desenvolvimento
 Abaixo estão as extensões listadas por status de desenvolvimento:
 
