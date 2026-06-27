@@ -23,14 +23,27 @@ class $slug:
         pass # ponytail: implement your search here
 EOF
     
-    # ponytail: automatic README injection with copyable code block
-    raw="https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/$slug/$slug.py"
-    sed -i "/^## 🛠️ Ferramenta/i * **$2**:\n\`\`\`text\n$raw\n\`\`\`\n" README.md
-    echo "[✓] Extensão '$2' criada em src/$slug/ e link adicionado ao README!"
+    # ponytail: add to Roadmap under 'Em Desenvolvimento'
+    sed -i "/^### 🚧 Em Desenvolvimento/a - [ ] **$slug**: Plugin em desenvolvimento." README.md
+    
+    echo "[✓] Extensão '$2' criada em src/$slug/ e adicionada ao Roadmap!"
 
 elif [ "$1" = "push" ]; then
     # ponytail: local lint + auto-bump tag + push
     ruff check src/ --fix || { echo "[X] Falha no Ruff! Corrija os erros antes de fazer o push."; exit 1; }
+    
+    # Move qualquer plugin 'em desenvolvimento' para 'concluídos' e adiciona o link
+    sed -n '/^### 🚧 Em Desenvolvimento/,/^###/p' README.md | grep '^- \[ \]' | while read -r line; do
+        plugin=$(echo "$line" | sed 's/^- \[ \] \*\*\(.*\)\*\*:.*$/\1/')
+        
+        # Remove do desenvolvimento e adiciona nos concluídos
+        sed -i "/- \[ \] \*\*$plugin\*\*/d" README.md
+        sed -i "/^### ✅ Concluídos/a - [x] **$plugin**: Plugin de busca concluído." README.md
+        
+        # Gera e injeta o bloco de texto para download nas Extensões Disponíveis
+        raw="https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/$plugin/$plugin.py"
+        sed -i "/^## 🛠️ Ferramenta/i * **$plugin**:\n\`\`\`text\n$raw\n\`\`\`\n" README.md
+    done
     
     git add .
     git commit -m "${2:-"Atualização automática dos plugins"}"
