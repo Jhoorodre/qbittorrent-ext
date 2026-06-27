@@ -43,9 +43,9 @@ elif [ "$1" = "push" ]; then
         pretty=$(echo "$line" | sed 's/^- \[ \] \*\*\(.*\)\*\* (`.*`):.*$/\1/')
         folder=$(echo "$line" | sed 's/^- \[ \] \*\*.*\*\* (`\(.*\)`):.*$/\1/')
         
-        # Remove do desenvolvimento e adiciona nos concluídos (mantendo o formato legível)
+        # Remove do desenvolvimento e adiciona nos concluídos usando o padrão do folder
         sed -i "/- \[ \] \*\*$pretty\*\* (\`$folder\`)/d" README.md
-        sed -i "/^### ✅ Concluídos/a - [x] **$pretty**: Plugin de busca concluído." README.md
+        sed -i "/^### ✅ Concluídos/a - [x] **$folder**: Plugin de busca concluído." README.md
         
         # Gera e injeta o bloco de texto para download nas Extensões Disponíveis com o nome original
         slug=${folder%-qb}

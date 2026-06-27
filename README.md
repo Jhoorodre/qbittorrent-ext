@@ -48,7 +48,7 @@ Este repositório conta com um script bash próprio de automação para facilita
 Abaixo estão as extensões listadas por status de desenvolvimento:
 
 ### ✅ Concluídos
-- [x] **AniRena**: Plugin de busca concluído.
+- [x] **anirena-qb**: Plugin de busca concluído.
 - [x] **amigosshareclub-qb**: Plugin de busca concluído.
 - [x] **darkmahou-qb**: Plugin de busca concluído.
 
