@@ -1,4 +1,4 @@
-# VERSION: 1.00
+# VERSION: 1.01
 import re
 import urllib.parse
 import urllib.request
@@ -13,7 +13,7 @@ class anirena:
         query = urllib.parse.quote(urllib.parse.unquote(what))
         
         for page in range(1, 6):
-            search_url = f"{self.url}/?s={query}&page={page}"
+            search_url = f"{self.url}/?q={query}&page={page}"
             try:
                 req = urllib.request.Request(search_url, headers={'User-Agent': 'Mozilla/5.0'})
                 html = urllib.request.urlopen(req, timeout=10).read().decode('utf-8', 'ignore')

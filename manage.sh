@@ -54,6 +54,15 @@ elif [ "$1" = "push" ]; then
     done
     
     git add .
+    
+    # Incrementa automaticamente o VERSION: 1.00 para 1.01 (etc) nos arquivos modificados
+    for file in $(git diff --cached --name-only | grep '\.py$'); do
+        if grep -q "^# VERSION:" "$file"; then
+            awk '/^# VERSION:/ { $3 = sprintf("%.2f", $3 + 0.01) } 1' "$file" > "$file.tmp" && mv "$file.tmp" "$file"
+            git add "$file"
+        fi
+    done
+    
     git commit -m "${2:-"Atualização automática dos plugins"}"
     
     # auto increment patch version (ex: v1.0.3 -> v1.0.4)
