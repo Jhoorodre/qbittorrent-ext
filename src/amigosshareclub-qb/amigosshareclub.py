@@ -2,7 +2,11 @@
 # AUTHORS: Jhoorodre
 # LICENSING INFORMATION: MIT
 
-import urllib.request, urllib.parse, re, tempfile, os
+import os
+import re
+import tempfile
+import urllib.parse
+import urllib.request
 from novaprinter import prettyPrinter
 
 class amigosshareclub:
@@ -12,21 +16,26 @@ class amigosshareclub:
     # ponytail: externalize cookie (supports both raw string and Netscape HTTP format) to prevent github leaks
     try:
         _r = open(os.path.join(os.path.dirname(__file__), "amigos_cookie.txt")).read().strip()
-        cookie = "; ".join(f"{p[5]}={p[6]}" for p in [l.split('\t') for l in _r.splitlines() if not l.startswith('#')] if len(p) >= 7) if "# Netscape" in _r else _r
-    except: cookie = "COLE_SEU_COOKIE_AQUI"
+        cookie = "; ".join(f"{p[5]}={p[6]}" for p in [line.split('\t') for line in _r.splitlines() if not line.startswith('#')] if len(p) >= 7) if "# Netscape" in _r else _r
+    except Exception:
+        cookie = "COLE_SEU_COOKIE_AQUI"
 
     def _get(self, url):
         # ponytail: single fetch returning bytes (can be decoded or saved directly)
-        try: return urllib.request.urlopen(urllib.request.Request(url, headers={'Cookie': self.cookie, 'User-Agent': 'Mozilla/5.0'})).read()
-        except: return b""
+        try:
+            return urllib.request.urlopen(urllib.request.Request(url, headers={'Cookie': self.cookie, 'User-Agent': 'Mozilla/5.0'})).read()
+        except Exception:
+            return b""
 
     def download_torrent(self, info):
         # ponytail: concise tempfile write for private tracker .torrent
         try:
             fd, path = tempfile.mkstemp(suffix=".torrent")
-            with os.fdopen(fd, 'wb') as f: f.write(self._get(info))
+            with os.fdopen(fd, 'wb') as f:
+                f.write(self._get(info))
             print(f"{path} {info}")
-        except: pass
+        except Exception:
+            pass
 
     def search(self, what, cat='all'):
         # ponytail: cat query was unused, ignoring it and flattening loop
@@ -34,7 +43,8 @@ class amigosshareclub:
         for p in range(5):
             html = self._get(f"{self.url}/torrents-search.php?search={q}&page={p}" if p else f"{self.url}/torrents-search.php?search={q}").decode('utf-8', 'ignore')
             items = re.findall(r'<li class="list-group-item[^>]*>(.*?)</li>', html, re.S | re.I)
-            if not items: break
+            if not items:
+                break
             
             for item in items:
                 title = (re.search(r'<a[^>]*href=["\']([^"\']*torrents-details\.php\?id=[^"\']+)["\'][^>]*>(.*?)</a>', item, re.I) or [None, None, None])

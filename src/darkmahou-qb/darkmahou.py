@@ -2,7 +2,10 @@
 # AUTHORS: Jhoorodre
 # LICENSING INFORMATION: MIT
 
-import urllib.request, urllib.parse, re, html
+import html
+import re
+import urllib.parse
+import urllib.request
 from novaprinter import prettyPrinter
 
 class darkmahou:
@@ -11,8 +14,10 @@ class darkmahou:
 
     def _get(self, url):
         # ponytail: one-line fetch
-        try: return urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'}), timeout=10).read().decode('utf-8', 'ignore')
-        except: return ""
+        try:
+            return urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'}), timeout=10).read().decode('utf-8', 'ignore')
+        except Exception:
+            return ""
 
     def search(self, what, cat='all'):
         page = self._get(f"{self.url}/?s={urllib.parse.quote(urllib.parse.unquote(what).replace('+', ' '))}")
@@ -32,7 +37,8 @@ class darkmahou:
                     mag = html.unescape(mag.replace('&amp;', '&'))
                     hash_val = (re.search(r'xt=urn:btih:([a-zA-Z0-9]+)', mag, re.I) or [None, mag])[1].lower()
                     
-                    if hash_val in seen: continue
+                    if hash_val in seen:
+                        continue
                     seen.add(hash_val)
                     
                     dn = re.search(r'[?&]dn=([^&]+)', mag, re.I)
