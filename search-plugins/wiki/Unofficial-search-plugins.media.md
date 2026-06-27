@@ -1,21 +1,21 @@
-Here you can find unofficial search engine plugins for qBittorrent that are made available by the community
+Aqui você pode encontrar plug-ins de mecanismo de pesquisa não oficiais para qBittorrent disponibilizados pela comunidade
 
-== Read First ==
-* Note that Python plugins/scripts are, by its nature, not considered to be safe. Therefore any use of the unofficial plugins is at your own risk. It is a good practice to audit/take a look at the plugin/script before you install.
-* To install search engine plugins, follow [[Install-search-plugins#steps-to-install-search-plugins-qbittorrent-version-3110-or-more-recent|this tutorial]].
-* To request search plugins not listed in this page, update [[Request-unofficial-search-plugin|this page]].
-* To write your own search plugins, please follow [[How-to-write-a-search-plugin|this tutorial]].
-* If you wrote one, you're welcome to add it to these tables. Please keep the list sorted by <code>Search Engine</code> name.
-* **If you experience issues with any of the plugins posted here, please report to the author directly.** In case the author is unresponsive, you can try to fix it yourself. Then you can edit this wiki page and update the link to your fixed plugin.
-* The plugins shown as ✖ or ❗ will result in the slowdown and malfunction of other plugins as well, hence the use of these plugins is strongly discouraged.
-* Avoid using Google service (https://www.google.com/s2/favicons) for fetching favicons as it will (potentially) notify them about your intention.
+== Leia primeiro ==
+* Observe que plug-ins/scripts Python não são, por natureza, considerados seguros. Portanto, qualquer uso de plug-ins não oficiais é por sua conta e risco. É uma boa prática auditar/dar uma olhada no plugin/script antes de instalar.
+* Para instalar plug-ins de mecanismo de pesquisa, siga [[Install-search-plugins#steps-to-install-search-plugins-qbittorrent-version-3110-or-more-recent|este tutorial]].
+* Para solicitar plug-ins de pesquisa não listados nesta página, atualize [[Request-unofficial-search-plugin|esta página]].
+* Para escrever seus próprios plug-ins de pesquisa, siga [[How-to-write-a-search-plugin|este tutorial]].
+* Se você escreveu um, você pode adicioná-lo a essas tabelas. Por favor, mantenha a lista ordenada pelo nome do <code>Mecanismo de Pesquisa</code>.
+* **Se você tiver problemas com qualquer um dos plug-ins postados aqui, informe diretamente ao autor.** Caso o autor não responda, você pode tentar consertar você mesmo. Então você pode editar esta página wiki e atualizar o link para seu plugin fixo.
+* Os plug-ins mostrados como ✖ ou ❗ também resultarão na lentidão e no mau funcionamento de outros plug-ins, portanto, o uso desses plug-ins é fortemente desencorajado.
+* Evite usar o serviço do Google (https://www.google.com/s2/favicons) para buscar favicons, pois isso irá (potencialmente) notificá-los sobre sua intenção.
 
-⚠️ We removed support for Python 2. Please upgrade to Python 3 to continue using the search function.
-The minimum supported Python version (across all platforms) is specified at [here](https://github.com/qbittorrent/qBittorrent/blob/master/INSTALL#L21-L23).
+⚠️ Removemos o suporte para Python 2. Atualize para Python 3 para continuar usando a função de pesquisa.
+A versão mínima do Python suportada (em todas as plataformas) é especificada [aqui](https://github.com/qbittorrent/qBittorrent/blob/master/INSTALL#L21-L23).
 
-== Plugins for Public Sites ==
+== Plug-ins para sites públicos ==
 
-| Search Engine | Author (Repository) | Version | Last update | Download link | Comments |
+| Mecanismo de Pesquisa | Autor (Repository) | Versão | Última atualização | Link de Download | Comentários |
 |---|---|---|---|---|---|
 | ![](https://www.google.com/s2/favicons?domain=academictorrents.com#.png) [Academic Torrents](https://academictorrents.com/) | [LightDestory](https://github.com/LightDestory/qBittorrent-Search-Plugins) | 1.2 | 19/Mar<br>2023 | [![](https://raw.githubusercontent.com/Pireo/hello-world/master/Download.gif)](https://raw.githubusercontent.com/LightDestory/qBittorrent-Search-Plugins/master/src/engines/academictorrents.py) | ✔ qbt 4.3.x / Python 3.8.5 <br>**READ REPOSITORY NOTES** |
 | ![](https://raw.githubusercontent.com/Cc050511/qBit-search-plugins/main/favicon.png) [acgrip](https://acg.rip/) | [Yun](https://github.com/Cc050511/qBit-search-plugins) | 1.0 | 24/Apr<br>2023 | [![](https://raw.githubusercontent.com/Pireo/hello-world/master/Download.gif)](https://raw.githubusercontent.com/Cc050511/qBit-search-plugins/main/acgrip.py) | ✔ qbt 4.5.2 / Python 3.10 |
@@ -93,11 +93,11 @@ The minimum supported Python version (across all platforms) is specified at [her
 | ![](https://i.imgur.com/EiYFI5M.png) [Zooqle](https://zooqle.skin/) | [444995](https://github.com/444995/qbit-search-plugins) | 1.10 | 07/Aug<br>2024 | [![](https://raw.githubusercontent.com/Pireo/hello-world/master/Download.gif)](https://raw.githubusercontent.com/444995/qbit-search-plugins/main/engines/zooqle.py) | ✔ qbt v4.6.5 / Python 3.11.1 |
 
 
-== Plugins for Private Sites ==
-* The plugin/script may require editing before you can use it.
-* Those sites may require registration and require adding your credentials to the plugin/script.
+== Plug-ins para sites privados ==
+* O plugin/script pode exigir edição antes de ser usado.
+* Esses sites podem exigir registro e adicionar suas credenciais ao plugin/script.
 
-| Search Engine | Author (Repository) | Version | Last update | Download link | Comments |
+| Mecanismo de Pesquisa | Autor (Repository) | Versão | Última atualização | Link de Download | Comentários |
 |---|---|---|---|---|---|
 | ![](https://raw.githubusercontent.com/MadeOfMagicAndWires/qBit-plugins/master/engines/bakabt.png) [BakaBT](https://bakabt.me) | [Made Of Magic<br>And Wires](https://github.com/MadeOfMagicAndWires/qBit-plugins) | 1.30 | 13/Apr<br>2017 | [![](https://raw.githubusercontent.com/Pireo/hello-world/master/Download.gif)](https://raw.githubusercontent.com/MadeOfMagicAndWires/qBit-plugins/master/engines/bakabt.py)<br>[![](https://github.com/Pireo/hello-world/blob/master/Help%20book.gif)](https://github.com/MadeOfMagicAndWires/qBit-plugins/blob/master/README.md) | ✔ qbt 4.3.x / Python 3.9.x |
 | ![](https://www.google.com/s2/favicons?domain=c411.org#.png) [C411](https://c411.org/) | [OptimusKoala](https://github.com/OptimusKoala/qbittorrent-c411-plugin) | 1.00 | 21/Mar<br>2026 | [![](https://raw.githubusercontent.com/Pireo/hello-world/master/Download.gif)](https://raw.githubusercontent.com/OptimusKoala/qbittorrent-c411-plugin/refs/heads/main/c411.py)<br>[![](https://github.com/Pireo/hello-world/blob/master/Help%20book.gif)](https://github.com/OptimusKoala/qbittorrent-c411-plugin/blob/main/README.md) | ✔ qbt 5.0.x / Python 3.9+<br>Private tracker, requires API key |
