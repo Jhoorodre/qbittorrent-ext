@@ -21,9 +21,9 @@ class $slug:
         pass # ponytail: implement your search here
 EOF
     
-    # ponytail: automatic README injection
+    # ponytail: automatic README injection with copyable code block
     raw="https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/$slug/$slug.py"
-    sed -i "/^## 🚀 Roadmap/i * **$2**: [Link Raw]($raw)\n" README.md
+    sed -i "/^## 🚀 Roadmap/i * **$2**:\n\`\`\`text\n$raw\n\`\`\`\n" README.md
     echo "[✓] Extensão '$2' criada em src/$slug/ e link adicionado ao README!"
 
 elif [ "$1" = "push" ]; then

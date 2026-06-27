@@ -13,8 +13,15 @@ Este repositório contém extensões e plugins de busca personalizados para o qB
 
 Você pode instalar as extensões individualmente colando os links abaixo no qBittorrent (na aba *Buscar* -> *Search plugins* -> *Install a new one* -> *Web link*), ou baixar todas de uma vez através do [último Release em ZIP](https://github.com/Jhoorodre/qbittorrent-ext/releases/latest).
 
-* **Amigos Share Club**: [Link Raw](https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/amigosshareclub-qb/amigosshareclub.py)
-* **Dark Mahou**: [Link Raw](https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/darkmahou-qb/darkmahou.py)
+* **Amigos Share Club**:
+```text
+https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/amigosshareclub-qb/amigosshareclub.py
+```
+
+* **Dark Mahou**:
+```text
+https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/darkmahou-qb/darkmahou.py
+```
 
 ## 🚀 Roadmap de Desenvolvimento
 Abaixo estão as extensões listadas por status de desenvolvimento:
