@@ -10,7 +10,9 @@ if [ "$1" = "new" ]; then
     # ponytail: minimal template injection
     cat <<EOF > "src/$slug/$slug.py"
 # VERSION: 1.00
-import urllib.request, urllib.parse, re
+import re
+import urllib.parse
+import urllib.request
 from novaprinter import prettyPrinter
 
 class $slug:
@@ -23,7 +25,7 @@ EOF
     
     # ponytail: automatic README injection with copyable code block
     raw="https://raw.githubusercontent.com/Jhoorodre/qbittorrent-ext/main/src/$slug/$slug.py"
-    sed -i "/^## 🚀 Roadmap/i * **$2**:\n\`\`\`text\n$raw\n\`\`\`\n" README.md
+    sed -i "/^## 🛠️ Ferramenta/i * **$2**:\n\`\`\`text\n$raw\n\`\`\`\n" README.md
     echo "[✓] Extensão '$2' criada em src/$slug/ e link adicionado ao README!"
 
 elif [ "$1" = "push" ]; then
